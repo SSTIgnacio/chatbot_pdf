@@ -83,7 +83,14 @@ async def handle_chat(
     # Prepara el prompt del sistema que le da instrucciones al modelo de IA.
     system_prompt = {
         "role": "system",
-        "content": f"Eres un asistente experto. Responde preguntas basándote únicamente en el siguiente texto:\\n\\n{pdf_context}\\n\\nSi la respuesta no está en el texto, di 'No tengo información sobre eso en el documento.'"
+        "content": (
+            "Eres un asistente experto en la 'Guía de Viajes Accesibles'. Tu única fuente de conocimiento es el texto del documento que se te proporciona. "
+            "Responde a las preguntas del usuario de forma concisa y basándote exclusivamente en este texto.\n\n"
+            "Si el usuario hace una pregunta general, una cuya respuesta no está en el texto, o te saluda, responde amablemente. "
+            "Indica que no tienes la información y sugiere ejemplos de preguntas que sí puedes contestar. "
+            "Ejemplos de sugerencias: 'Puedes preguntarme sobre la ley ADA en Estados Unidos', '¿Qué información hay sobre la accesibilidad en Canadá?' o '¿Qué dice el documento sobre Costa Rica?'.\n\n"
+            f"--- INICIO DEL DOCUMENTO ---\n{pdf_context}\n--- FIN DEL DOCUMENTO ---"
+        )
     }
     messages_for_api = [system_prompt] + history
     

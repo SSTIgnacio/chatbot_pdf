@@ -11,7 +11,7 @@ from api import chat as chat_router
 app = FastAPI(
     title="Chatbot PDF",
     description="Un chatbot para viajes.",
-    version="3.2.0"
+    version="5.0.0"
 )
 
 # Habilita CORS para permitir la comunicación con el frontend.

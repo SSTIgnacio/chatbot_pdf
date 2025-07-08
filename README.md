@@ -37,7 +37,7 @@ Arquitectura Modular: El código del backend está organizado por responsabilida
 
 Manejo Seguro de Secretos: La clave de la API de OpenAI se gestiona de forma segura a través de un archivo .env.
 
-Documentación de API Automática: Gracias a FastAPI, se puede acceder a una documentación interactiva de la API en http://localhost:8000/docs.
+Documentación de API Automática: Gracias a FastAPI, se puede acceder a una documentación interactiva de la API en http://localhost:8001/docs.
 
 Control de Versiones con GitHub
 Este proyecto utiliza una estrategia de ramificación Git Flow simplificada para asegurar un desarrollo ordenado y un código estable.
@@ -93,6 +93,6 @@ pip install -r requirements.txt
 Con el entorno virtual activado, inicia el servidor FastAPI.
 
 # Desde la carpeta backend/
-python -m uvicorn main:app --reload --port 8001
+python -m uvicorn main:app --reload --port 8001 
 
 El servidor estará disponible en http://localhost:8001/docs.
